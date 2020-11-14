@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "lcd14";
+  src: url("/fonts/lcd/LCD14.otf");
+}
+
+html,
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+.digits {
+  font-family: "lcd14";
+}
+
+.clock > * {
+  margin-right: 1rem;
+  width: 250px;
+  display: inline-block;
+}
