@@ -15,16 +15,19 @@ let displayTime = function (args) {
   let curTime = new Date(Date.now());
 
   for (let i = 0; i < clocks.length; i++) {
-    let divClock = document.createElement("div");
-    divClock.classList.add("clock");
-    let spanZone = document.createElement("div");
-    let spanDigits = document.createElement("div");
-    spanDigits.classList.add("digits");
-    spanZone.innerHTML = clocks[i];
-    spanDigits.innerHTML = curTime.toLocaleString("en-US", {
+    let thisTime = curTime.toLocaleString("en-US", {
       timeZone: clocks[i]
     });
-    divClock.append(...[spanZone, spanDigits]);
+    let divClock = document.createElement("div");
+    let spanZone = document.createElement("span");
+    let spanDate = document.createElement("span");
+    let spanDigits = document.createElement("span");
+    divClock.classList.add("clock");
+    spanDigits.classList.add("digits");
+    spanZone.innerHTML = clocks[i];
+    spanDigits.innerHTML = thisTime.split(",")[1];
+    spanDate.innerHTML = thisTime.split(",")[0];
+    divClock.append(...[spanZone, spanDate, spanDigits]);
     divTime.appendChild(divClock);
   }
 
