@@ -8,15 +8,6 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-.digits {
-  font-family: "lcd14";
-  font-size: 2rem;
-  color: yellowgreen;
-  background-color: black;
-  text-align: center;
-  width: 600px;
-}
-
 .clock {
   /* padding: 1rem; */
   border: solid 1px gray;
@@ -30,4 +21,12 @@ body {
   width: 175px;
   display: inline-block;
   padding: 1rem;
+}
+.digits {
+  font-family: "lcd14";
+  font-size: 2rem;
+  color: yellowgreen;
+  background-color: black;
+  text-align: center;
+  width: 300px;
 }
