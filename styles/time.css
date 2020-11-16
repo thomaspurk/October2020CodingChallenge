@@ -1,6 +1,6 @@
 @font-face {
   font-family: "lcd14";
-  src: url("/fonts/lcd/LCD14.otf");
+  src: url("./fonts/lcd/LCD14.otf");
 }
 
 html,
@@ -9,20 +9,19 @@ body {
 }
 
 .clock {
-  /* padding: 1rem; */
   border: solid 1px gray;
   border-bottom: none;
 }
 .clock:last-of-type {
   border: solid 1px gray;
 }
-.clock > * {
+.clock > span {
   margin-right: 1rem;
-  width: 175px;
+  width: 150px;
   display: inline-block;
   padding: 1rem;
 }
-.digits {
+span.digits {
   font-family: "lcd14";
   font-size: 2rem;
   color: yellowgreen;

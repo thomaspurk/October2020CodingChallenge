@@ -10,11 +10,16 @@ let clocks = [
 ];
 
 let displayTime = function (args) {
+  // Get the existing Document Object Model (DOM) element to add clocks to.
+  // Clear the DOM element
+  // Get the current Date and Time
   let divTime = document.getElementById("time");
   divTime.innerHTML = "";
   let curTime = new Date(Date.now());
 
+  // Loop each clock Time Zone and create the DOM elements that make up the clock
   for (let i = 0; i < clocks.length; i++) {
+    // Convert curren time based o the IANA Time Zone Code
     let thisTime = curTime.toLocaleString("en-US", {
       timeZone: clocks[i]
     });
@@ -22,15 +27,23 @@ let displayTime = function (args) {
     let spanZone = document.createElement("span");
     let spanDate = document.createElement("span");
     let spanDigits = document.createElement("span");
+
+    // Control styles with a styles by class names
     divClock.classList.add("clock");
     spanDigits.classList.add("digits");
+
+    // Set the content
     spanZone.innerHTML = clocks[i];
     spanDigits.innerHTML = thisTime.split(",")[1];
     spanDate.innerHTML = thisTime.split(",")[0];
+
+    // Append the new DOM elements to the HTML page
     divClock.append(...[spanZone, spanDate, spanDigits]);
     divTime.appendChild(divClock);
   }
 
+  // Use the page rendering refresh event to
+  // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
   window.requestAnimationFrame(displayTime);
 };
 
